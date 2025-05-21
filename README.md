@@ -49,17 +49,17 @@ A comprehensive CRM system for managing public GitHub projects with user authent
    cd <project-folder>
 
 2. Create .env file in backend folder with and in root folder:
-  ```env
-  # PostgreSQL settings
-  POSTGRES_HOST=
-  POSTGRES_PORT=
-  POSTGRES_USER=
-  POSTGRES_PASSWORD=
-  POSTGRES_DB=
+   ```env
+   # PostgreSQL settings
+   POSTGRES_HOST=
+   POSTGRES_PORT=
+   POSTGRES_USER=
+   POSTGRES_PASSWORD=
+   POSTGRES_DB=
   
-  # Authentication settings
-  SECRET_KEY=SECRET_KEY
-  JWT_EXPIRES_IN=1d
+   # Authentication settings
+   SECRET_KEY=SECRET_KEY
+   JWT_EXPIRES_IN=1d
 
 ### API Endpoints
 ## Authentication
