@@ -5,36 +5,9 @@ import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { signupRequest } from "@/api/repoApi";
 import { routes } from "@/config/site";
-
-type FormData = {
-  email: string;
-  password: string;
-};
-
-type SignupResponse = {
-  data: {
-    token: string;
-  };
-};
-
-const signupRequest = async (data: FormData): Promise<SignupResponse> => {
-  const response = await fetch("http://localhost:5000/auth/signup", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-
-  const result = await response.json();
-
-  if (!response.ok) {
-    throw new Error(result.message || "Signup failed");
-  }
-
-  return result;
-};
+import { AuthFormData } from "@/types";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -58,7 +31,7 @@ const SignUp = () => {
     e.preventDefault();
     const formData = Object.fromEntries(
       new FormData(e.currentTarget)
-    ) as FormData;
+    ) as AuthFormData;
 
     setErrors({});
     mutate(formData);

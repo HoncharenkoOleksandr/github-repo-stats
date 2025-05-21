@@ -6,7 +6,7 @@ import Login from "../login/login";
 import SignUp from "../sign-up/sign-up";
 
 const AuthCard = () => {
-  const [selected, setSelected] = useState<React.Key>("login");
+  const [selected, setSelected] = useState<string | number>("login");
 
   return (
     <div className="flex flex-col w-full">

@@ -1,3 +1,5 @@
+import { AuthFormData, AuthResponse } from "@/types";
+
 const BASE_URL = "http://localhost:5000";
 
 const getToken = () => localStorage.getItem("token");
@@ -90,3 +92,43 @@ export async function refreshRepo(id: string) {
 
   return res.json();
 }
+
+export const loginRequest = async (
+  data: AuthFormData
+): Promise<AuthResponse> => {
+  const response = await fetch(`${BASE_URL}/auth/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  const result = await response.json();
+
+  if (!response.ok) {
+    throw new Error(result.message || "Login failed");
+  }
+
+  return result;
+};
+
+export const signupRequest = async (
+  data: AuthFormData
+): Promise<AuthResponse> => {
+  const response = await fetch(`${BASE_URL}/auth/signup`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  const result = await response.json();
+
+  if (!response.ok) {
+    throw new Error(result.message || "Signup failed");
+  }
+
+  return result;
+};

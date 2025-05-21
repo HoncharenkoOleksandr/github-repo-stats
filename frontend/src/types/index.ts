@@ -15,3 +15,14 @@ export interface RepoResponse {
   createdAtUTC: number;
   addedAt: Date;
 }
+
+export type AuthResponse = {
+  data: {
+    token: string;
+  };
+};
+
+export type AuthFormData = {
+  email: string;
+  password: string;
+};
