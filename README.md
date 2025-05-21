@@ -60,22 +60,23 @@ A comprehensive CRM system for managing public GitHub projects with user authent
   # Authentication settings
   SECRET_KEY=SECRET_KEY
   JWT_EXPIRES_IN=1d
-```
-API Endpoints
-Authentication
-POST /auth/login - User login
 
-POST /auth/signup - User registration
+### API Endpoints
+## Authentication
 
-Users
-GET /users/me - Get current user profile
+- POST /auth/login - User login
 
-Repositories
-POST /repo - Add new repository
+- POST /auth/signup - User registration
 
-GET /repo - List all repositories
+## Users
+- GET /users/me - Get current user profile
 
-DELETE /repo/{id} - Delete repository
+## Repositories
+- POST /repo - Add new repository
 
-PATCH /repo/{id}/refresh - Refresh repository data
+- GET /repo - List all repositories
+
+- DELETE /repo/{id} - Delete repository
+
+- PATCH /repo/{id}/refresh - Refresh repository data
 
